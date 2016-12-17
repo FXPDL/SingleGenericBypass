@@ -6,12 +6,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _InitApp `(v ~T0 @X0 0 ef ]
 "29 switch1.h
 [v _initSwitch1 `(v ~T0 @X0 0 ef ]
-"30 switch2.h
-[v _initSwitch2 `(v ~T0 @X0 0 ef ]
-"30 switch1.h
+"30
 [v _updateSwitch1 `(v ~T0 @X0 0 ef ]
-"31 switch2.h
-[v _updateSwitch2 `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2857,48 +2853,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;switch1.h: 29: void initSwitch1(void);
 [; ;switch1.h: 30: void updateSwitch1(void);
 [; ;switch1.h: 31: void setSwitch1State(int);
-[; ;system.h: 18: void ConfigureOscillator(void);
-[; ;system.h: 19: void wait_ms(uint16_t);
-[; ;system.h: 20: uint16_t adc_convert(uint8_t);
-[; ;switch2.h: 30: void initSwitch2(void);
-[; ;switch2.h: 31: void updateSwitch2(void);
-[; ;switch2.h: 32: void setSwitch2State(int);
-"23 main.c
+"22 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 23: void main(void) {
+[; ;main.c: 22: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 24: ConfigureOscillator();
-"24
+[; ;main.c: 23: ConfigureOscillator();
+"23
 [e ( _ConfigureOscillator ..  ]
-[; ;main.c: 25: InitApp();
-"25
+[; ;main.c: 24: InitApp();
+"24
 [e ( _InitApp ..  ]
-[; ;main.c: 27: initSwitch1();
-"27
+[; ;main.c: 26: initSwitch1();
+"26
 [e ( _initSwitch1 ..  ]
-[; ;main.c: 28: initSwitch2();
+[; ;main.c: 28: while (1) {
 "28
-[e ( _initSwitch2 ..  ]
-[; ;main.c: 30: while (1) {
-"30
 [e :U 344 ]
 {
-[; ;main.c: 31: updateSwitch1();
-"31
+[; ;main.c: 29: updateSwitch1();
+"29
 [e ( _updateSwitch1 ..  ]
-[; ;main.c: 32: updateSwitch2();
-"32
-[e ( _updateSwitch2 ..  ]
-"34
+"31
 }
 [e :U 343 ]
-"30
+"28
 [e $U 344  ]
 [e :U 345 ]
-[; ;main.c: 34: }
-[; ;main.c: 36: }
-"36
+[; ;main.c: 31: }
+[; ;main.c: 33: }
+"33
 [e :UE 342 ]
 }

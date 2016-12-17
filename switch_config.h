@@ -27,8 +27,10 @@ extern "C" {
 #define Switch1_Relay1 LATCbits.LATC0
 #define Switch1_Relay10 LATCbits.LATC4
 
-
+/*
 #define Switch2_LED  LATAbits.LATA2
 #define Switch2_Stomp PORTAbits.RA4
 #define Switch2_Relay1 LATCbits.LATC2
 #define Switch2_Relay10 LATCbits.LATC1
+ */
+ 

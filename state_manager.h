@@ -33,9 +33,9 @@ void initStateManager(void);
 PedalState getCurrentState(void);
 
 int getSwitch1State(void);
-int getSwitch2State(void);
+
 
 void updateSwitch1State(int);
-void updateSwitch2State(int);
+
 
 void saveState(void);

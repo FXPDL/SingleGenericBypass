@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=GenericBypass
+PROJECTNAME=SingleGenericBypass
 
 # Active Configuration
 DEFAULTCONF=PIC16F1503_Config

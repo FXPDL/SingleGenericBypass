@@ -30,10 +30,6 @@ PedalState getCurrentState(void) {
         if (pedalState.switch1 != 1) {
             pedalState.switch1 = 0; //fail safe
         }
-        
-        if (pedalState.switch2 != 1) {
-            pedalState.switch2 = 0; //fail safe
-        }
 
         isInitialized = 1;
     }    
@@ -49,26 +45,12 @@ int getSwitch1State() {
     
 }
 
-int getSwitch2State() {
-    getCurrentState();
-    return pedalState.switch2;
-    
-}
-
 void updateSwitch1State(int state) {
     if (state != 1) {state = 0;}
     
     pedalState.switch1 = state;
     saveState();
 }
-void updateSwitch2State(int state) {
-    if (state != 1) {state = 0;}
-    
-    pedalState.switch2 = state;
-    saveState();
-}
-
-
 
 void saveState(void) {
     uint8_t r;

@@ -13,8 +13,7 @@
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */         
           
-#include "switch1.h"          /* Boost control */
-#include "switch2.h"          /* Boost control */
+#include "switch1.h"          /* Switch control */
 
 /******************************************************************************/
 /* Main Program                                                               */
@@ -25,11 +24,9 @@ void main(void) {
     InitApp();
         
     initSwitch1();
-    initSwitch2();
     
     while (1) {
         updateSwitch1();
-        updateSwitch2();
 
     }
 

@@ -3892,27 +3892,15 @@ void initSwitch1(void);
 void updateSwitch1(void);
 void setSwitch1State(int);
 
-# 18 "system.h"
-void ConfigureOscillator(void);
-void wait_ms(uint16_t);
-uint16_t adc_convert(uint8_t);
-
-# 30 "switch2.h"
-void initSwitch2(void);
-void updateSwitch2(void);
-void setSwitch2State(int);
-
-# 23 "main.c"
+# 22 "main.c"
 void main(void) {
 ConfigureOscillator();
 InitApp();
 
 initSwitch1();
-initSwitch2();
 
 while (1) {
 updateSwitch1();
-updateSwitch2();
 
 }
 

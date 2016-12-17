@@ -15,7 +15,6 @@
       <itemPath>state_manager.h</itemPath>
       <itemPath>switch1.h</itemPath>
       <itemPath>hardware_controls.h</itemPath>
-      <itemPath>switch2.h</itemPath>
       <itemPath>switch_config.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
@@ -34,7 +33,6 @@
       <itemPath>HEF.c</itemPath>
       <itemPath>state_manager.c</itemPath>
       <itemPath>switch1.c</itemPath>
-      <itemPath>switch2.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

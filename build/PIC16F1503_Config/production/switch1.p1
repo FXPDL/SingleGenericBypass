@@ -2870,9 +2870,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;state_manager.h: 31: void initStateManager(void);
 [; ;state_manager.h: 33: PedalState getCurrentState(void);
 [; ;state_manager.h: 35: int getSwitch1State(void);
-[; ;state_manager.h: 36: int getSwitch2State(void);
 [; ;state_manager.h: 38: void updateSwitch1State(int);
-[; ;state_manager.h: 39: void updateSwitch2State(int);
 [; ;state_manager.h: 41: void saveState(void);
 [; ;system.h: 18: void ConfigureOscillator(void);
 [; ;system.h: 19: void wait_ms(uint16_t);

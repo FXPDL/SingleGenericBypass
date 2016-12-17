@@ -2857,9 +2857,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;state_manager.h: 31: void initStateManager(void);
 [; ;state_manager.h: 33: PedalState getCurrentState(void);
 [; ;state_manager.h: 35: int getSwitch1State(void);
-[; ;state_manager.h: 36: int getSwitch2State(void);
 [; ;state_manager.h: 38: void updateSwitch1State(int);
-[; ;state_manager.h: 39: void updateSwitch2State(int);
 [; ;state_manager.h: 41: void saveState(void);
 "15 state_manager.c
 [v _isInitialized `i ~T0 @X0 1 e ]
@@ -2921,135 +2919,83 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 346 ]
 [; ;state_manager.c: 32: }
-[; ;state_manager.c: 34: if (pedalState.switch2 != 1) {
+[; ;state_manager.c: 34: isInitialized = 1;
 "34
-[e $ ! != . _pedalState 1 -> 1 `i 347  ]
-{
-[; ;state_manager.c: 35: pedalState.switch2 = 0;
-"35
-[e = . _pedalState 1 -> 0 `i ]
-"36
-}
-[e :U 347 ]
-[; ;state_manager.c: 36: }
-[; ;state_manager.c: 38: isInitialized = 1;
-"38
 [e = _isInitialized -> 1 `i ]
-"39
+"35
 }
 [e :U 345 ]
-[; ;state_manager.c: 39: }
-[; ;state_manager.c: 40: return pedalState;
-"40
+[; ;state_manager.c: 35: }
+[; ;state_manager.c: 36: return pedalState;
+"36
 [e ) _pedalState ]
 [e $UE 344  ]
-[; ;state_manager.c: 41: }
-"41
+[; ;state_manager.c: 37: }
+"37
 [e :UE 344 ]
 }
-"44
+"40
 [v _getSwitch1State `(i ~T0 @X0 1 ef ]
 {
-[; ;state_manager.c: 44: int getSwitch1State() {
+[; ;state_manager.c: 40: int getSwitch1State() {
 [e :U _getSwitch1State ]
 [f ]
-[; ;state_manager.c: 45: if (!isInitialized) {
-"45
-[e $ ! ! != _isInitialized -> 0 `i 349  ]
+[; ;state_manager.c: 41: if (!isInitialized) {
+"41
+[e $ ! ! != _isInitialized -> 0 `i 348  ]
 {
-[; ;state_manager.c: 46: initStateManager();
-"46
+[; ;state_manager.c: 42: initStateManager();
+"42
 [e ( _initStateManager ..  ]
-"47
+"43
 }
-[e :U 349 ]
-[; ;state_manager.c: 47: }
-[; ;state_manager.c: 48: return pedalState.switch1;
-"48
+[e :U 348 ]
+[; ;state_manager.c: 43: }
+[; ;state_manager.c: 44: return pedalState.switch1;
+"44
 [e ) . _pedalState 0 ]
-[e $UE 348  ]
-[; ;state_manager.c: 50: }
-"50
-[e :UE 348 ]
+[e $UE 347  ]
+[; ;state_manager.c: 46: }
+"46
+[e :UE 347 ]
 }
-"52
-[v _getSwitch2State `(i ~T0 @X0 1 ef ]
-{
-[; ;state_manager.c: 52: int getSwitch2State() {
-[e :U _getSwitch2State ]
-[f ]
-[; ;state_manager.c: 53: getCurrentState();
-"53
-[e ( _getCurrentState ..  ]
-[; ;state_manager.c: 54: return pedalState.switch2;
-"54
-[e ) . _pedalState 1 ]
-[e $UE 350  ]
-[; ;state_manager.c: 56: }
-"56
-[e :UE 350 ]
-}
-"58
+"48
 [v _updateSwitch1State `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;state_manager.c: 58: void updateSwitch1State(int state) {
+[; ;state_manager.c: 48: void updateSwitch1State(int state) {
 [e :U _updateSwitch1State ]
 [v _state `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;state_manager.c: 59: if (state != 1) {state = 0;}
-"59
-[e $ ! != _state -> 1 `i 352  ]
+[; ;state_manager.c: 49: if (state != 1) {state = 0;}
+"49
+[e $ ! != _state -> 1 `i 350  ]
 {
 [e = _state -> 0 `i ]
 }
-[e :U 352 ]
-[; ;state_manager.c: 61: pedalState.switch1 = state;
-"61
+[e :U 350 ]
+[; ;state_manager.c: 51: pedalState.switch1 = state;
+"51
 [e = . _pedalState 0 _state ]
-[; ;state_manager.c: 62: saveState();
-"62
+[; ;state_manager.c: 52: saveState();
+"52
 [e ( _saveState ..  ]
-[; ;state_manager.c: 63: }
-"63
-[e :UE 351 ]
+[; ;state_manager.c: 53: }
+"53
+[e :UE 349 ]
 }
-"64
-[v _updateSwitch2State `(v ~T0 @X0 1 ef1`i ]
-{
-[; ;state_manager.c: 64: void updateSwitch2State(int state) {
-[e :U _updateSwitch2State ]
-[v _state `i ~T0 @X0 1 r1 ]
-[f ]
-[; ;state_manager.c: 65: if (state != 1) {state = 0;}
-"65
-[e $ ! != _state -> 1 `i 354  ]
-{
-[e = _state -> 0 `i ]
-}
-[e :U 354 ]
-[; ;state_manager.c: 67: pedalState.switch2 = state;
-"67
-[e = . _pedalState 1 _state ]
-[; ;state_manager.c: 68: saveState();
-"68
-[e ( _saveState ..  ]
-[; ;state_manager.c: 69: }
-"69
-[e :UE 353 ]
-}
-"73
+"55
 [v _saveState `(v ~T0 @X0 1 ef ]
 {
-[; ;state_manager.c: 73: void saveState(void) {
+[; ;state_manager.c: 55: void saveState(void) {
 [e :U _saveState ]
 [f ]
-"74
+"56
 [v _r `uc ~T0 @X0 1 a ]
-[; ;state_manager.c: 74: uint8_t r;
-[; ;state_manager.c: 75: r = HEF_ByteArrayWrite(1, (void *) &pedalState, sizeof (pedalState));
-"75
+[; ;state_manager.c: 56: uint8_t r;
+[; ;state_manager.c: 57: r = HEF_ByteArrayWrite(1, (void *) &pedalState, sizeof (pedalState));
+"57
 [e = _r -> ( _HEF_ByteArrayWrite (3 , , -> -> 1 `i `uc -> -> &U _pedalState `*v `*uc -> -> # _pedalState `ui `uc `uc ]
-[; ;state_manager.c: 76: }
-"76
-[e :UE 355 ]
+[; ;state_manager.c: 58: }
+"58
+[e :UE 351 ]
 }
